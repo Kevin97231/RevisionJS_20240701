@@ -35,3 +35,16 @@ const carre2 = (tableau) => tableau.map( number => number * number)
 
 console.log(carre(chiffre))
 console.log(carre2(chiffre))
+
+// Méthode flatMap()
+
+let result = chiffre.map( chiffre => [chiffre * chiffre])
+
+let result2 = chiffre.flatMap( chiffre => [chiffre * chiffre])
+
+// Attention, seulement sur un niveau !
+let result3 = chiffre.flatMap( chiffre => [[chiffre * chiffre]])
+
+console.log('result', result)
+console.log('result2', result2)
+console.log('result3', result3)
