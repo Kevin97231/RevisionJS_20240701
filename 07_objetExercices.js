@@ -21,3 +21,34 @@
 //       ==> calculeSalary() renverra -> baseSalary * bonusPercentage;
 
 // Partie 1 : Création des classes de base
+
+class Employee {
+  constructor(name, age, baseSalary, employeeId) {
+    this.name = name;
+    this.age = age;
+    this.baseSalary = baseSalary;
+    this.employeeId = employeeId;
+  }
+
+  calculateSalary() {
+    return this.baseSalary * 1.1;
+  }
+}
+
+class Manager extends Employee {
+  #bonusPercentage = 15;
+
+  constructor(name, age, baseSalary, employeeId) {
+    super(name, age, baseSalary, employeeId);
+  }
+
+  calculateSalary() {
+    return this.baseSalary * (1 + this.#bonusPercentage / 100);
+  }
+}
+
+employe = new Employee("Jean", 42, 1000);
+manager = new Manager("Maurice", 54, 2000);
+
+console.log(employe.calculateSalary());
+console.log(manager.calculateSalary());
